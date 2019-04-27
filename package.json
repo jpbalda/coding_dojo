@@ -8,7 +8,7 @@
   },
   "scripts": {
     "watch": "nodemon start.js --ignore ./public/",
-    "assets": "webpack --mode development"
+    "assets-dev": "webpack --mode development"
   },
   "repository": {
     "type": "git",
