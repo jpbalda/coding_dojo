@@ -1,0 +1,46 @@
+{
+  "name": "coding_dojo",
+  "version": "1.0.0",
+  "description": "![](docs/evaluacion1.png?raw=true) ![](docs/evaluacion2.png?raw=true) ![](docs/evaluacion3.png?raw=true)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "watch": "nodemon ./backend/start.js --ignore ./backend/public/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpbalda/coding_dojo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpbalda/coding_dojo/issues"
+  },
+  "homepage": "https://github.com/jpbalda/coding_dojo#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.11",
+    "vue": "^2.6.10",
+    "webpack": "^4.30.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^2.0.3",
+    "dotenv": "^7.0.0",
+    "es6-promisify": "^6.0.1",
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "express-validator": "^5.3.1",
+    "mongoose": "^5.5.4",
+    "mongoose-mongodb-errors": "0.0.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.1",
+    "pug": "^2.0.3",
+    "validator": "^10.11.0"
+  }
+}
