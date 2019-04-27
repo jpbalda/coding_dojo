@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  .container.py-5
+    .row
+      .col-md-12
+        h2.text-center.mb-4 Bienvenidos
+        .row
+          .col-md-6.mx-auto
+            .card
+              .card-header
+                h3.mb-0 Registro
+              .card-body
+                form.form(role="form" autocomplete="off" action="/register" method="POST")
+                  .form-group
+                      label(for="email") Correo
+                      input(type="email" class="form-control form-control-lg" name="email" id="email" placeholder="usuario@ejemplo.com" required autofocus)
+                  .form-group
+                      label(for="password") Password
+                      input(type="password" class="form-control form-control-lg" name="password" id="password" minlength="8" required)
+                  .form-group
+                      label(for="password-confirm") Confirmar Password
+                      input(type="password" class="form-control form-control-lg" name="password-confirm" id="password-confirm" minlength="8" required)
+                  .text-center
+                    button(type="submit" class="text-center btn btn-primary btn-lg") Registrar

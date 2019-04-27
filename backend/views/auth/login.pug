@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .container.py-5
+    .row
+      .col-md-12
+        h2.text-center.mb-4 Bienvenidos
+        .row
+          .col-md-6.mx-auto
+            .card
+              .card-header
+                h3.mb-0 Login
+              .card-body
+                form.form(role="form" autocomplete="off" action="/login" method="POST")
+                  .form-group
+                      label(for="email") Correo
+                      input(type="email" class="form-control form-control-lg" name="email" id="email" required autofocus)
+                  .form-group
+                      label(for="password") Password
+                      input(type="password" class="form-control form-control-lg" name="password" id="password" minlength="8" required)
+                  .text-center
+                    button(type="submit" class="text-center btn btn-primary btn-lg") Ingresar
