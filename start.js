@@ -14,6 +14,7 @@ const User = require('./models/User');
 
 const { auth } = require('./middlewares/auth');
 const authRouter = require('./routes/auth');
+const standupsRouter = require('./routes/api/standups');
 
 mongoose
   .connect(process.env.DATABASE, { useNewUrlParser: true })
@@ -56,7 +57,9 @@ app.set('view engine', 'pug');
 // Routes
 app.get('/', auth, (req, res) => res.render('index'));
 app.use('/', authRouter);
+app.use('/api/standups', auth, standupsRouter);
 
+// TODO: Handle errors
 
 const server = app.listen(process.env.PORT || 3000, () => {
   console.log(`Express running -> PORT ${server.address().port}`);

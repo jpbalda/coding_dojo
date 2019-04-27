@@ -1,5 +1,16 @@
 <template>
   <div>
+    <div class="d-flex align-items-center justify-content-between">
+      <h3>Standups</h3>
+      <router-link
+        :to="{name: 'standups.create'}"
+        class="btn btn-sm btn-outline-primary"
+        tag="button"
+        title="Nuevo"
+      >
+        <i class="fas fa-plus"></i>
+      </router-link>
+    </div>
     <div v-if="standups.length === 0">No existen standups creados</div>
     <table v-else class="table">
       <thead>
@@ -46,7 +57,7 @@ export default {
   },
   methods: {
     deleteStandup(standup) {
-      if (!confirm('¿Está seguro?')) {
+      if (!confirm("¿Está seguro?")) {
         return;
       }
       axios

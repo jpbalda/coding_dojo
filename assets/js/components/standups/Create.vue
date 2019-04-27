@@ -1,26 +1,10 @@
 <template>
   <div>
-    <div v-if="standups.length === 0">No existen standups creados</div>
-    <table v-else class="table">
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Creador</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="standup in standups">
-          <td>{{ standup.name }}</td>
-          <td>{{ standup.creator.email }}</td>
-          <td>
-            <button class="btn btn-sm btn-outline-primary" @click="deleteStandup(standup)">
-              <i class="fas fa-trash"></i>
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="form-group">
+      <label for="name"> Nombre
+      <input type="text" class="form-control form-control-lg" name="email" id="email" required>
+                      input(type="email" class="form-control form-control-lg" name="email" id="email" required autofocus)
+    </div>
   </div>
 </template>
 
@@ -30,36 +14,14 @@ import axios from "axios";
 export default {
   data() {
     return {
-      standups: []
+      standup: {
+        name: "",
+        attendees: []
+      }
     };
   },
-  created() {
-    //TODO: show a loading spinner
-
-    axios
-      .get("/api/standups")
-      .then(response => (this.standups = response.data.data))
-      .catch(error => {
-        //TODO: show an error
-        console.log(error);
-      });
-  },
   methods: {
-    deleteStandup(standup) {
-      if (!confirm('¿Está seguro?')) {
-        return;
-      }
-      axios
-        .delete(`/api/standups/${standup._id}`)
-        .then(response => {
-          const index = this.standups.indexOf(standup);
-          this.standups.splice(index, 1);
-        })
-        .catch(error => {
-          //TODO: show an error
-          console.log(error);
-        });
-    }
+    saveStandup(standup) {}
   }
 };
 </script>
